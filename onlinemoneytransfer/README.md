@@ -9,7 +9,7 @@
 `sbt test`
 
 # Running
-`java -jar target/scala-2.11/txmgr-assembly-1.0.jar`
+`java -jar target/scala-2.11/onlinebanking-assembly-1.0.jar`
 
 Server opens at http://localhost:8080
 
@@ -17,6 +17,7 @@ Server opens at http://localhost:8080
 ## Getting amount of money on the account
 
 ```
+http://localhost:8080/account/a
 GET /account/{name}
 Content-Type: application/json
 ```
@@ -26,6 +27,7 @@ Returns the amount of money on the account:
 
 ## Creating an account
 ```
+http://localhost:8080/account/
 POST /account
 Content-Type: application/json
 
@@ -37,6 +39,7 @@ Creates account with name "a" and initial amount 100 units.
 ## Transferring money between accounts
 
 ```
+http://localhost:8080/transfer/account/
 POST /transfer
 Content-Type: application/json
 
